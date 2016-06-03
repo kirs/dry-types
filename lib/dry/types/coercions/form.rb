@@ -56,6 +56,10 @@ module Dry
         def self.to_hash(input)
           empty_str?(input) ? {} : input
         end
+
+        def self.to_str(input)
+          input.to_s
+        end
       end
     end
   end

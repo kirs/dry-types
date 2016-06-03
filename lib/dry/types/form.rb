@@ -34,6 +34,10 @@ module Dry
       self['int'].constructor(Coercions::Form.method(:to_int))
     end
 
+    register('form.string') do
+      self['string'].constructor(Coercions::Form.method(:to_str))
+    end
+
     register('form.float') do
       self['float'].constructor(Coercions::Form.method(:to_float))
     end
