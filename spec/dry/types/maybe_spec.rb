@@ -10,6 +10,10 @@ RSpec.describe Dry::Types::Definition, '#maybe' do
       expect(type['hello'].value).to eql('hello')
     end
 
+    it 'returns blank when string is blank' do
+      expect(type[''].value).to eql('')
+    end
+
     it 'returns original if input is already a maybe' do
       expect(type[Dry::Monads::Maybe::Some.new('hello')].value).to eql('hello')
     end
